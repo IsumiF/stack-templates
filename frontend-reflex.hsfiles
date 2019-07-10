@@ -1,0 +1,59 @@
+{-# START_FILE package.yaml #-}
+name:                {{name}}
+version:             0.1.0.0
+# synopsis:
+# description:
+# bug-reports:
+license:             BSD-3-Clause
+author:              {{author-name}}{{^author-name}}Author name here{{/author-name}}
+maintainer:          {{author-email}}{{^author-email}}example@example.com{{/author-email}}
+copyright:           {{copyright}}
+category:            Web
+
+ghc-options: -Wall -Wno-simplifiable-class-constraints
+
+default-extensions:
+- OverloadedStrings
+- OverloadedLists
+
+custom-setup:
+  dependencies:
+  - base
+  - Cabal
+  - frontend-utils
+
+dependencies:
+- base
+- aeson
+- bytestring
+- containers
+- data-default
+- directory
+- file-embed
+- generic-deriving
+- ghcjs-dom
+- jsaddle
+- jsaddle-dom
+- lens
+- mtl
+- reflex
+- reflex-dom
+- reflex-dom-core
+- servant
+- servant-reflex
+- shakespeare
+- text
+- time
+- transformers
+
+# library:
+#   source-dirs:
+#   - src
+
+executables:
+  {{name}}-app:
+    source-dirs:
+    - app
+    main: Main.hs
+    dependencies:
+    - frontend-utils
